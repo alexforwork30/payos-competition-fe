@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/png" href="/logo.png" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fotofusion</title>
+</head>
+
+<body class="bg-light">
+  <div id="root"></div>
+  <script>
+    // Auto set font size for mobile to scale easier
+    if (window.innerWidth < 1440) {
+      document.documentElement.style.fontSize =
+        (window.innerWidth / 1440) * 16 + 'px'
+      // Base on 513px width to set 16px font size
+      // Because 513px width is designer's design width
+    }
+    // Use rem unit for every element to scale easier
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
