@@ -40,6 +40,7 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({
       });
       localStorage.setItem("token", order.token);
       localStorage.setItem("paymentLinkId", order.paymentLink.paymentLinkId);
+      await orderStore.getOrder(order.paymentLink.paymentLinkId, order.token);
       window.open(order.paymentLink.checkoutUrl, "_blank");
     } catch (error) {
       console.error(error);
@@ -50,6 +51,7 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({
     try {
       await cancelOrder(order?.id, "User cancel order");
       localStorage.clear();
+      orderStore.setOrder(null);
     } catch (error) {
       console.error(error);
     }

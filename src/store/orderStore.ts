@@ -15,4 +15,8 @@ export default class OrderStore {
     const storedOrder = await getOrder(orderId, token);
     this.order = storedOrder;
   }
+
+  setOrder(order: Order | null): void {
+    this.order = order;
+  }
 }
